@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     private Touch touch;
     public float maxRunSpeed;
     private float currentRunSpeed;
-    public float touchSens;
+    public float xAxisSpeed;
     public Slider levelSlider;
     public int levelValue;
 
@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
     public Sprite levelFill2;
     public Sprite levelFill3;
     public Sprite levelFill4;
-
+    public Animator[] playerAnimators;
 
 
 
@@ -57,19 +57,21 @@ public class Player : MonoBehaviour
     float newX;
     private void Movement()
     {
+        if (!GameManager.Instance.isStarted) { return; }
+
         if (Input.touchCount > 0)
         {
             touch = Input.GetTouch(0);
             if (touch.phase == TouchPhase.Moved)
             {
                 touchXDelta = touch.deltaPosition.x;
-                transform.position += transform.right * touchSens * touchXDelta * Time.deltaTime;
+                transform.position += transform.right * xAxisSpeed * touchXDelta * Time.deltaTime;
             }
         }
         Vector3 clampX = transform.position;
         clampX.x = Mathf.Clamp(clampX.x, -4.65f, 4.65f);
         transform.position = clampX;
-
+        AnimPlay(PlayerStatus.Run);
 
         transform.position += transform.forward * currentRunSpeed * Time.deltaTime;
     }
@@ -138,5 +140,49 @@ public class Player : MonoBehaviour
             item.SetActive(_stage == 4);
         }
     }
+
+
+    public enum PlayerStatus
+    {
+        Idle,
+        Run,
+        Sad,
+        Dance
+    }
+
+    public static readonly int Status = Animator.StringToHash("Status");
+    public void AnimPlay(PlayerStatus status)
+    {
+        switch (status)
+        {
+            case PlayerStatus.Idle:
+                foreach (var item in playerAnimators)
+                {
+                    item.SetInteger(Status, 0);
+                }
+                break;
+            case PlayerStatus.Run:
+                foreach (var item in playerAnimators)
+                {
+                    item.SetInteger(Status, 1);
+                }
+                break;
+            case PlayerStatus.Sad:
+                foreach (var item in playerAnimators)
+                {
+                    item.SetInteger(Status, 2);
+                }
+                break;
+            case PlayerStatus.Dance:
+                foreach (var item in playerAnimators)
+                {
+                    item.SetInteger(Status, 3);
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
 
 }
