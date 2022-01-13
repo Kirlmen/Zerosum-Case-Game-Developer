@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
@@ -30,6 +31,8 @@ public class Player : MonoBehaviour
     public Sprite levelFill3;
     public Sprite levelFill4;
     public Animator[] playerAnimators;
+    public UnityEvent onLevelUp;
+    public UnityEvent onLevelDown;
 
 
 

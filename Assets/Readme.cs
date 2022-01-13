@@ -22,7 +22,7 @@
  * 
  *      It includes ;
  *      -Game Title (You can choose your own)
- *      -Tap To Play Button and Text
+ *      -Tap To Play Button and Text ++
  *      -Current Level Number
  *      -Currency Amount
  *      -Start Stack Upgrade Button & Price
@@ -55,28 +55,28 @@
  * -----
  *
  *  Input :
- *      Character moves left and right with drag input.
+ *      Character moves left and right with drag input. ++
  *      Movement needs to be simple and as smooth as possible.
  *
  *  Character :
- *      Character moves with the given animations.
- *      Character needs a maximum stack limit.
- *      Character animations need a transition between them.
- *          If there is no stack "Run1", if stack is full "Run2" needs to be played.
- *          States between also needs to affect the animation.
+ *      Character moves with the given animations. ++
+ *      Character needs a maximum stack limit. ++
+ *      Character animations need a transition between them.++
+ *          If there is no stack "Run1", if stack is full "Run2" needs to be played.++
+ *          States between also needs to affect the animation. ++
  *      Transitions needs to be as smooth as possible.
  *      On Level End, character must dance.
  *
  *  Collectables :
  *      There will be 2 types of collectables
- *      -Stack
+ *      -Stack ++
  *      -Currency
  *
- *      Stack : Will increase out total stack amount.
+ *      Stack : Will increase out total stack amount. ++ 
  *      Currency : Will increase out total currency amount.
  *      
  *  Obstacles :
- *      Obstacles covers a part of the road.
+ *      Obstacles covers a part of the road. ++
  *      If character cannot avoid them, current stack amount will decrease.
  *
  *
