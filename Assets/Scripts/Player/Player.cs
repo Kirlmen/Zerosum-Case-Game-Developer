@@ -35,11 +35,14 @@ public class Player : MonoBehaviour
     public UnityEvent onLevelDown;
 
 
+    private Rigidbody rb;
+    public bool stop = false;
 
     private void Awake()
     {
         currentRunSpeed = maxRunSpeed;
         Instance = this;
+        rb = this.gameObject.GetComponent<Rigidbody>();
     }
     void Start()
     {
@@ -53,13 +56,16 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!GameManager.Instance.isStarted) { return; }
         Movement();
+        GroundCheck();
     }
 
     float touchXDelta;
     float newX;
     private void Movement()
     {
+        if (stop) { return; }
         if (!GameManager.Instance.isStarted) { return; }
 
         if (Input.touchCount > 0)
@@ -113,10 +119,12 @@ public class Player : MonoBehaviour
         {
             if (_prevStage < _stage)
             {
+                onLevelUp?.Invoke();
                 _prevStage = _stage;
             }
             else if (_prevStage > _stage)
             {
+                onLevelDown?.Invoke();
                 _prevStage = _stage;
             }
         }
@@ -150,7 +158,10 @@ public class Player : MonoBehaviour
         Idle,
         Run,
         Sad,
-        Dance
+        Dance,
+        Falling,
+        Cheer,
+        Spin
     }
 
     public static readonly int Status = Animator.StringToHash("Status");
@@ -182,9 +193,48 @@ public class Player : MonoBehaviour
                     item.SetInteger(Status, 3);
                 }
                 break;
-            default:
+            case PlayerStatus.Falling:
+                foreach (var item in playerAnimators)
+                {
+                    item.SetInteger(Status, 4);
+                }
+                break;
+            case PlayerStatus.Cheer:
+                foreach (var item in playerAnimators)
+                {
+                    item.SetInteger(Status, 5);
+                }
+                break;
+            case PlayerStatus.Spin:
+                foreach (var item in playerAnimators)
+                {
+                    item.SetInteger(Status, 6);
+                }
                 break;
         }
+    }
+
+
+
+    public RaycastHit groundHit;
+    public LayerMask groundLayerMask;
+    public float groundCheckRange;
+    public bool isGrounded;
+    public void GroundCheck()
+    {
+        isGrounded = Physics.Raycast(transform.localPosition, -transform.up, out groundHit, groundCheckRange, groundLayerMask);
+
+        if (!isGrounded)
+        {
+            rb.drag = 3f;
+            AnimPlay(PlayerStatus.Falling);
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = isGrounded ? Color.green : Color.red;
+        Gizmos.DrawRay(transform.localPosition, -transform.up * groundCheckRange);
     }
 
 
