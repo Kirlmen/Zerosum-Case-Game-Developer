@@ -13,12 +13,16 @@ public class Player : MonoBehaviour
     public float maxRunSpeed;
     private float currentRunSpeed;
     public float xAxisSpeed;
-    public Slider levelSlider;
-    public int levelValue;
+    [SerializeField] ParticleSystem swirlParticle;
+
+
+
 
 
 
     [Header("Stages")]
+    public int levelValue;
+    public Slider levelSlider;
     public GameObject[] stage0;
     public GameObject[] stage1;
     public GameObject[] stage2;
@@ -33,7 +37,6 @@ public class Player : MonoBehaviour
     public Animator[] playerAnimators;
     public UnityEvent onLevelUp;
     public UnityEvent onLevelDown;
-
 
     private Rigidbody rb;
     public bool stop = false;
@@ -81,6 +84,7 @@ public class Player : MonoBehaviour
         clampX.x = Mathf.Clamp(clampX.x, -4.65f, 4.65f);
         transform.position = clampX;
         AnimPlay(PlayerStatus.Run);
+
 
         transform.position += transform.forward * currentRunSpeed * Time.deltaTime;
     }
@@ -179,6 +183,7 @@ public class Player : MonoBehaviour
                 foreach (var item in playerAnimators)
                 {
                     item.SetInteger(Status, 1);
+                    item.Update(0); // force to quick transition to run. (on stage change, there is a delay to entry>1sec play idle> run);
                 }
                 break;
             case PlayerStatus.Sad:
@@ -226,8 +231,13 @@ public class Player : MonoBehaviour
 
         if (!isGrounded)
         {
+            swirlParticle.Play();
             rb.drag = 3f;
             AnimPlay(PlayerStatus.Falling);
+        }
+        else if (isGrounded)
+        {
+            swirlParticle.Stop();
         }
     }
 
