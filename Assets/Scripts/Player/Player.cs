@@ -46,6 +46,7 @@ public class Player : MonoBehaviour
         currentRunSpeed = maxRunSpeed;
         Instance = this;
         rb = this.gameObject.GetComponent<Rigidbody>();
+        levelValue = PlayerPrefs.GetInt("LevelValue", 0);
     }
     void Start()
     {

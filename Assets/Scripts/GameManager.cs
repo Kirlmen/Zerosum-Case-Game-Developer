@@ -23,5 +23,27 @@ public class GameManager : MonoBehaviour
     {
         isStarted = true;
         Player.Instance.AnimPlay(Player.PlayerStatus.Run);
+        GameUI();
+    }
+
+    public void GameWon()
+    {
+        Player.Instance.AnimPlay(Player.PlayerStatus.Dance);
+        Player.Instance.stop = true;
+        //todo: endlevelui;
+        //todo: level completed text.
+        //TODO: Gathered currency added to playerprefs.
+        //TODO: Next Scene button.
+
+    }
+
+    public void CurrencyManager()
+    {
+        //todo: currency
+    }
+
+    public void GameUI()
+    {
+
     }
 }
