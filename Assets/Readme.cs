@@ -35,7 +35,7 @@
  *
  *      It includes ;
  *      -Current Level Number
- *      -Currency Amount
+ *      -Currency Amount ++
  *      -Stack Amount ++
  *
  *      Stack Amount :

@@ -74,7 +74,9 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   shouldRotate: 1
-  increaseValue: 5
+  isCurrency: 1
+  currencyValue: 2
+  increaseValue: 2
   rotationSpeed: 100
 --- !u!1001 &3631227444006308552
 PrefabInstance:

@@ -10,10 +10,10 @@ public class GameManager : MonoBehaviour
 
 
 
-    public TMP_Text currencyText, buyPrice, startStackText;
+    public TMP_Text currencyText, buyPrice, startStackText, ingameCurrencyText;
     [SerializeField] Button buyButton;
     [SerializeField] GameObject openButton;
-    [SerializeField] GameObject startingMenu;
+    [SerializeField] GameObject startingMenu, gameScreen;
     public bool canBuy = false;
 
 
@@ -37,7 +37,9 @@ public class GameManager : MonoBehaviour
         Instance = this;
 
         currency = PlayerPrefs.GetInt("Currency");
-        currencyText.text = PlayerPrefs.GetInt("Currency").ToString();
+        currencyText.text = currency.ToString();
+
+
         price = PlayerPrefs.GetInt("Price", 1);
         buyPrice.text = price.ToString();
         startStackText.text = PlayerPrefs.GetInt("LevelValue", 0).ToString();
@@ -60,14 +62,29 @@ public class GameManager : MonoBehaviour
     {
         isStarted = true;
         Player.Instance.AnimPlay(Player.PlayerStatus.Run);
-        GameUI();
-        if (isStarted) { startingMenu.SetActive(false); }
+        if (isStarted)
+        {
+            startingMenu.SetActive(false);
+            gameScreen.SetActive(true);
+        }
     }
+
+    int temp;
+    public void RuntimeIncrease(int amount) //calculate the runtime currency
+    {
+        if (isStarted)
+        {
+            temp += amount;
+            ingameCurrencyText.text = temp.ToString();
+        }
+    }
+
 
     public void GameWon()
     {
         Player.Instance.AnimPlay(Player.PlayerStatus.Dance);
         Player.Instance.stop = true;
+        PlayerPrefs.SetInt("Currency", PlayerPrefs.GetInt("Currency") + temp);//saving the collected currency + saved currency
         //todo: endlevelui;
         //todo: level completed text.
         //TODO: Gathered currency added to playerprefs.
@@ -75,17 +92,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void CurrencyCollect(int amount)
-    {
-        currency += amount;
-        PlayerPrefs.SetInt("Currency", currency); //level sonunda kaydet. her topladığında değil!!!
-        Debug.Log("I called");
-    }
 
-    public void GameUI()
-    {
-
-    }
 
 
     [SerializeField] GameObject screenBuyButton;

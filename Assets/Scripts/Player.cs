@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     private Touch touch;
 
     [SerializeField] ParticleSystem swirlParticle;
+    [SerializeField] GameObject playerCanvas;
 
 
 
@@ -72,6 +73,7 @@ public class Player : MonoBehaviour
 
 
         if (!GameManager.Instance.isStarted) { return; }
+        playerCanvas.SetActive(true);
         Movement();
         GroundCheck();
     }

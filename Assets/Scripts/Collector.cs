@@ -5,6 +5,11 @@ using UnityEngine;
 public class Collector : MonoBehaviour
 {
     [SerializeField] ParticleSystem coinParticle;
+    private int increase;
+    private void OnEnable()
+    {
+        increase = Collectible.currencyValue;
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<Collectible>())
@@ -13,7 +18,7 @@ public class Collector : MonoBehaviour
             Player.Instance.StageManager();
             if (other.CompareTag("Currency"))
             {
-                GameManager.Instance.CurrencyCollect(1);
+                GameManager.Instance.RuntimeIncrease(increase);
             }
         }
         if (other.CompareTag("Gold"))

@@ -7,8 +7,11 @@ public class Collectible : MonoBehaviour
 {
     public UnityEvent onCollection;
     public bool shouldRotate;
+    public bool isCurrency;
+    public static int currencyValue = 2;
     public int increaseValue;
     public int rotationSpeed;
+
     public void Collect()
     {
         onCollection?.Invoke();
