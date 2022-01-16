@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,10 +11,13 @@ public class GameManager : MonoBehaviour
 
 
 
-    public TMP_Text currencyText, buyPrice, startStackText, ingameCurrencyText;
+    public TMP_Text currencyText, buyPrice, startStackText, ingameCurrencyText, levelText, collectedCurText;
     [SerializeField] Button buyButton;
     [SerializeField] GameObject openButton;
-    [SerializeField] GameObject startingMenu, gameScreen;
+    [SerializeField] GameObject startingMenu, gameScreen, endLevelScreen;
+
+
+    public UnityEvent onLevelWon;
     public bool canBuy = false;
 
 
@@ -82,11 +86,14 @@ public class GameManager : MonoBehaviour
 
     public void GameWon()
     {
+        onLevelWon?.Invoke();
         Player.Instance.AnimPlay(Player.PlayerStatus.Dance);
         Player.Instance.stop = true;
+        int collected;
+        collected = int.Parse(ingameCurrencyText.text);
+        collectedCurText.text = collected.ToString();
         PlayerPrefs.SetInt("Currency", PlayerPrefs.GetInt("Currency") + temp);//saving the collected currency + saved currency
-        //todo: endlevelui;
-        //todo: level completed text.
+
         //TODO: Gathered currency added to playerprefs.
         //TODO: Next Scene button.
 
