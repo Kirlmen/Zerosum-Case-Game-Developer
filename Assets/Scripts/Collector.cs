@@ -11,6 +11,10 @@ public class Collector : MonoBehaviour
         {
             other.GetComponent<Collectible>().Collect();
             Player.Instance.StageManager();
+            if (other.CompareTag("Currency"))
+            {
+                GameManager.Instance.CurrencyCollect(1);
+            }
         }
         if (other.CompareTag("Gold"))
         {

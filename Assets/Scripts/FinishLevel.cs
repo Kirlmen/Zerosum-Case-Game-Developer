@@ -20,7 +20,7 @@ public class FinishLevel : MonoBehaviour
             }
             else
             {
-                //TODO: WON.
+                GameManager.Instance.GameWon();
             }
         }
     }

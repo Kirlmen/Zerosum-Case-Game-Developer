@@ -62,7 +62,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   shouldRotate: 1
-  increaseValue: 10
+  increaseValue: 5
   rotationSpeed: 155
 --- !u!65 &3134695940776406769
 BoxCollider:

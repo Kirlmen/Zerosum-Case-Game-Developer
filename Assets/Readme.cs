@@ -13,9 +13,9 @@
  * -----
  *
  * There will be 3 screens :
- * - Tap To Play
- * - In Game
- * - Level End
+ * - Tap To Play ??
+ * - In Game ??
+ * - Level End ??
  *
  *  Tap To Play :
  *      This screen will appear before starting a new level.
@@ -24,8 +24,8 @@
  *      -Game Title (You can choose your own)
  *      -Tap To Play Button and Text ++
  *      -Current Level Number
- *      -Currency Amount
- *      -Start Stack Upgrade Button & Price
+ *      -Currency Amount ++
+ *      -Start Stack Upgrade Button & Price ++
  *
  *      Start Stack Upgrade Button :
  *      This button will consume our currency and increase our starting stack.
@@ -36,7 +36,7 @@
  *      It includes ;
  *      -Current Level Number
  *      -Currency Amount
- *      -Stack Amount
+ *      -Stack Amount ++
  *
  *      Stack Amount :
  *      This must be attached to and move with the character as smooth as possible.
@@ -65,19 +65,19 @@
  *          If there is no stack "Run1", if stack is full "Run2" needs to be played.++
  *          States between also needs to affect the animation. ++
  *      Transitions needs to be as smooth as possible.
- *      On Level End, character must dance.
+ *      On Level End, character must dance. ++
  *
  *  Collectables :
  *      There will be 2 types of collectables
  *      -Stack ++
- *      -Currency
+ *      -Currency ++
  *
  *      Stack : Will increase out total stack amount. ++ 
- *      Currency : Will increase out total currency amount.
+ *      Currency : Will increase out total currency amount. ??
  *      
  *  Obstacles :
  *      Obstacles covers a part of the road. ++
- *      If character cannot avoid them, current stack amount will decrease.
+ *      If character cannot avoid them, current stack amount will decrease. ++
  *
  *
  * GAME DATA
@@ -90,15 +90,15 @@
  *      After your last unique level finished, you must repeat them.
  *
  *  Currency :
- *      Currency Amount must be remembered if game is closed and opened again.
- *      The amount will increase after collecting a currency collectable and, decreases after using upgrade button.
+ *      Currency Amount must be remembered if game is closed and opened again. ++
+ *      The amount will increase after collecting a currency collectable and, decreases after using upgrade button. ++
  *
  *  Start Stack Upgrade Button :
- *      Start stack represent the amount that our stack at start.
- *      Start stack start with 0 and increases by 1 with upgrade button on the tap to play screen. 
- *      Upgrade Button price increase exponentially on each purchase action.
- *      Start Stack amount must be remembered if game is closed and opened again.
- *      Upgrade Button price and level must be remembered if game is closed and opened again.
+ *      Start stack represent the amount that our stack at start. ++
+ *      Start stack start with 0 and increases by 1 with upgrade button on the tap to play screen.  ++
+ *      Upgrade Button price increase exponentially on each purchase action. ++
+ *      Start Stack amount must be remembered if game is closed and opened again. ++
+ *      Upgrade Button price and level must be remembered if game is closed and opened again. ++
  *
  * !!You can define collectable values and upgrade prices by yourself.
  * !!There will be no fail condition.

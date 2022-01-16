@@ -9,25 +9,24 @@ public class Player : MonoBehaviour
     public static Player Instance;
 
 
+
     private Touch touch;
-    public float maxRunSpeed;
-    private float currentRunSpeed;
-    public float xAxisSpeed;
+
     [SerializeField] ParticleSystem swirlParticle;
 
 
 
 
 
-
+    [Space]
     [Header("Stages")]
     public int levelValue;
     public Slider levelSlider;
-    public GameObject[] stage0;
-    public GameObject[] stage1;
-    public GameObject[] stage2;
-    public GameObject[] stage3;
-    public GameObject[] stage4;
+    public GameObject[] level0;
+    public GameObject[] level1;
+    public GameObject[] level2;
+    public GameObject[] level3;
+    public GameObject[] level4;
     public Image levelFillImage;
     public Sprite levelFill0;
     public Sprite levelFill1;
@@ -37,6 +36,7 @@ public class Player : MonoBehaviour
     public Animator[] playerAnimators;
     public UnityEvent onLevelUp;
     public UnityEvent onLevelDown;
+    [Space]
 
     private Rigidbody rb;
     public bool stop = false;
@@ -46,7 +46,12 @@ public class Player : MonoBehaviour
         currentRunSpeed = maxRunSpeed;
         Instance = this;
         rb = this.gameObject.GetComponent<Rigidbody>();
+
+
+
         levelValue = PlayerPrefs.GetInt("LevelValue", 0);
+        StageManager();
+        levelSlider.value = levelValue;
     }
     void Start()
     {
@@ -60,40 +65,67 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (PlayerPrefs.GetInt("LevelValue") > levelValue) //update levelvalue runtime
+        {
+            levelValue = PlayerPrefs.GetInt("LevelValue");
+        }
+
+
         if (!GameManager.Instance.isStarted) { return; }
         Movement();
         GroundCheck();
     }
 
-    float touchXDelta;
-    float newX;
+
+    [Space]
+    [Header("Player Controls")] public float xAxisSpeed;
+    public float limitX;
+    public float maxRunSpeed;
+    private float currentRunSpeed;
+    float lastTouchedX;
+
     private void Movement()
     {
         if (stop) { return; }
         if (!GameManager.Instance.isStarted) { return; }
 
+
+        float newX = 0;
+        float touchXDelta = 0;
+
         if (Input.touchCount > 0)
         {
-            touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Moved)
+            if (Input.GetTouch(0).phase == TouchPhase.Began)
             {
-                touchXDelta = touch.deltaPosition.x;
-                transform.position += transform.right * xAxisSpeed * touchXDelta * Time.deltaTime;
+                lastTouchedX = Input.GetTouch(0).position.x;
+            }
+            else if (Input.GetTouch(0).phase == TouchPhase.Moved)
+            {
+                touchXDelta = 5 * (Input.GetTouch(0).position.x - lastTouchedX) / Screen.width; //fixed movement
+                lastTouchedX = Input.GetTouch(0).position.x;
             }
         }
-        Vector3 clampX = transform.position;
-        clampX.x = Mathf.Clamp(clampX.x, -4.65f, 4.65f);
-        transform.position = clampX;
+        //PC input controls
+        // else if (Input.GetMouseButton(0)) 
+        // {
+        //     touchXDelta = Input.GetAxis("Mouse X");
+        // }
+
+
         AnimPlay(PlayerStatus.Run);
 
+        newX = transform.position.x + xAxisSpeed * touchXDelta * Time.deltaTime;
+        newX = Mathf.Clamp(newX, -limitX, limitX);
 
-        transform.position += transform.forward * currentRunSpeed * Time.deltaTime;
+
+        Vector3 newPosition = new Vector3(newX, transform.position.y, transform.position.z + currentRunSpeed * Time.deltaTime);
+        transform.position = newPosition;
     }
 
 
-    private int _stage;
-    private int _prevStage;
-    public void StageManager()
+    private int level;
+    private int prevLevel;
+    public void StageManager() //stages
     {
         if (levelValue < 0) { levelValue = 0; }
         if (levelValue > 100) { levelValue = 100; }
@@ -101,64 +133,64 @@ public class Player : MonoBehaviour
         //Stages
         if (levelValue < 25)
         {
-            _stage = 0;
+            level = 0;
         }
         else if (levelValue >= 25 && levelValue < 50)
         {
-            _stage = 1;
+            level = 1;
         }
         else if (levelValue >= 50 && levelValue < 70)
         {
-            _stage = 2;
+            level = 2;
         }
         else if (levelValue >= 70 && levelValue < 90)
         {
-            _stage = 3;
+            level = 3;
         }
         else if (levelValue >= 90 && levelValue <= 100)
         {
-            _stage = 4;
+            level = 4;
         }
 
-        if (_prevStage != _stage)
+        if (prevLevel != level)
         {
-            if (_prevStage < _stage)
+            if (prevLevel < level) //levelup
             {
                 onLevelUp?.Invoke();
-                _prevStage = _stage;
+                prevLevel = level;
             }
-            else if (_prevStage > _stage)
+            else if (prevLevel > level) //leveldown
             {
                 onLevelDown?.Invoke();
-                _prevStage = _stage;
+                prevLevel = level;
             }
         }
 
 
-        foreach (var item in stage0)
+        foreach (var item in level0)
         {
-            item.SetActive(_stage == 0);
+            item.SetActive(level == 0);
         }
-        foreach (var item in stage1)
+        foreach (var item in level1)
         {
-            item.SetActive(_stage == 1);
+            item.SetActive(level == 1);
         }
-        foreach (var item in stage2)
+        foreach (var item in level2)
         {
-            item.SetActive(_stage == 2);
+            item.SetActive(level == 2);
         }
-        foreach (var item in stage3)
+        foreach (var item in level3)
         {
-            item.SetActive(_stage == 3);
+            item.SetActive(level == 3);
         }
-        foreach (var item in stage4)
+        foreach (var item in level4)
         {
-            item.SetActive(_stage == 4);
+            item.SetActive(level == 4);
         }
     }
 
 
-    public enum PlayerStatus
+    public enum PlayerStatus //anim status
     {
         Idle,
         Run,
@@ -221,8 +253,8 @@ public class Player : MonoBehaviour
     }
 
 
-
-    public RaycastHit groundHit;
+    [Space]
+    [Header("GroundCheck")] public RaycastHit groundHit;
     public LayerMask groundLayerMask;
     public float groundCheckRange;
     public bool isGrounded;
