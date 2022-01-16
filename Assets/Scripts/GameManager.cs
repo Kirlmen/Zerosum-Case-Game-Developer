@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 
 
 
-    public TMP_Text currencyText, buyPrice, startStackText, ingameCurrencyText, levelText, collectedCurText;
+    public TMP_Text currencyText, buyPrice, startStackText, ingameCurrencyText, levelText, collectedCurText, totalCurrencyText, multiplyText;
     [SerializeField] Button buyButton;
     [SerializeField] GameObject openButton;
     [SerializeField] GameObject startingMenu, gameScreen, endLevelScreen;
@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
         else { openButton.SetActive(true); }
 
         if (canBuy && PlayerPrefs.GetInt("Currency") >= PlayerPrefs.GetInt("Price")) { buyButton.interactable = true; } //Buy button protection
-        else { buyButton.interactable = false; }
+        else { buyButton.interactable = false; buyPrice.color = Color.red; }
 
     }
 
@@ -73,13 +73,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    int temp;
+    public int runtimeCurrency;
     public void RuntimeIncrease(int amount) //calculate the runtime currency
     {
         if (isStarted)
         {
-            temp += amount;
-            ingameCurrencyText.text = temp.ToString();
+            runtimeCurrency += amount;
+            ingameCurrencyText.text = runtimeCurrency.ToString();
         }
     }
 
@@ -92,9 +92,8 @@ public class GameManager : MonoBehaviour
         int collected;
         collected = int.Parse(ingameCurrencyText.text);
         collectedCurText.text = collected.ToString();
-        PlayerPrefs.SetInt("Currency", PlayerPrefs.GetInt("Currency") + temp);//saving the collected currency + saved currency
-
-        //TODO: Gathered currency added to playerprefs.
+        totalCurrencyText.text = PlayerPrefs.GetInt("Currency").ToString();
+        //PlayerPrefs.SetInt("Currency", PlayerPrefs.GetInt("Currency") + runtimeCurrency);//saving the collected currency + saved currency
         //TODO: Next Scene button.
 
     }
@@ -107,10 +106,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] int priceIncreaseRate = 4;
     public void LevelUpButton() //TO MAXIMIZE LEVEL > NEED TO SPEND TOTAL 20.300 CURRENCY
     {
-        if (PlayerPrefs.GetInt("Currency") <= 0)
-        {
-            return;
-        }
+        // if (PlayerPrefs.GetInt("Currency") <= 0)
+        // {
+        //     return;
+        // }
         //Price SetUP
         price = PlayerPrefs.GetInt("Price", 1);
         int curr = PlayerPrefs.GetInt("Currency");
@@ -143,5 +142,10 @@ public class GameManager : MonoBehaviour
 
 
 
+    }
+
+    public int GetCurrentCurrency()
+    {
+        return runtimeCurrency;
     }
 }
