@@ -61,7 +61,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-
+        if (!GameManager.Instance.isStarted) { return; }
+        Movement();
     }
 
     private void FixedUpdate()
@@ -74,7 +75,7 @@ public class Player : MonoBehaviour
 
         if (!GameManager.Instance.isStarted) { return; }
         playerCanvas.SetActive(true);
-        Movement();
+
         GroundCheck();
     }
 
@@ -86,6 +87,8 @@ public class Player : MonoBehaviour
     private float currentRunSpeed;
     float lastTouchedX;
 
+
+    //if x speed < 110 camera starts to jitter
     private void Movement()
     {
 
@@ -108,10 +111,10 @@ public class Player : MonoBehaviour
             }
         }
         //PC input controls
-        // else if (Input.GetMouseButton(0)) 
-        // {
-        //     touchXDelta = Input.GetAxis("Mouse X");
-        // }
+        else if (Input.GetMouseButton(0))
+        {
+            touchXDelta = Input.GetAxis("Mouse X");
+        }
 
 
         AnimPlay(PlayerStatus.Run);

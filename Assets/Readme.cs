@@ -45,9 +45,9 @@
  *      This screen will appear after we reached our finish line.
  *
  *      It includes ;
- *      -Level Completed Text
- *      -Collected Currency Amount
- *      -Next Level Button
+ *      -Level Completed Text ++
+ *      -Collected Currency Amount ++
+ *      -Next Level Button ++
  *
  * !!UI elements must be responsive and works well with different resolutions.
  *      
@@ -73,7 +73,7 @@
  *      -Currency ++
  *
  *      Stack : Will increase out total stack amount. ++ 
- *      Currency : Will increase out total currency amount. ??
+ *      Currency : Will increase out total currency amount. ++
  *      
  *  Obstacles :
  *      Obstacles covers a part of the road. ++
@@ -85,8 +85,8 @@
  * 
  *  Levels :
  *      There must be minimum 2, maximum 5 different levels.
- *      Level number must increase if you reach finish.
- *      Level number must be remembered if game is closed and opened again.
+ *      Level number must increase if you reach finish. ++
+ *      Level number must be remembered if game is closed and opened again. ++
  *      After your last unique level finished, you must repeat them.
  *
  *  Currency :
@@ -100,8 +100,8 @@
  *      Start Stack amount must be remembered if game is closed and opened again. ++
  *      Upgrade Button price and level must be remembered if game is closed and opened again. ++
  *
- * !!You can define collectable values and upgrade prices by yourself.
- * !!There will be no fail condition.
+ * !!You can define collectable values and upgrade prices by yourself. ++
+ * !!There will be no fail condition. ++
  *
  *
  * !!IMPORTANT!!

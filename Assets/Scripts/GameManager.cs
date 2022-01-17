@@ -159,7 +159,7 @@ public class GameManager : MonoBehaviour
         startStackText.text = PlayerPrefs.GetInt("LevelValue").ToString();
 
         buyPrice.text = PlayerPrefs.GetInt("Price").ToString();
-        if (PlayerPrefs.GetInt("Price") > 403)  //if its reached full level
+        if (PlayerPrefs.GetInt("Price") > 400)  //if its reached full level
         {
             buyPrice.text = "Full!";
             screenBuyButton.SetActive(false); // buton açılır kapanırı yaptığında değiştir!!
