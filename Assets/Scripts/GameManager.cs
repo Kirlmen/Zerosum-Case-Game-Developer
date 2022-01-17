@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
 
 
 
-    public TMP_Text currencyText, buyPrice, startStackText, ingameCurrencyText, levelText, collectedCurText, totalCurrencyText, multiplyText;
+    public TMP_Text currencyText, buyPrice, startStackText, ingameCurrencyText, endlevelText, collectedCurText, totalCurrencyText, multiplyText, startLevelNum, gameLevelNum;
     [SerializeField] Button buyButton;
     [SerializeField] GameObject openButton;
     [SerializeField] GameObject startingMenu, gameScreen, endLevelScreen;
@@ -51,6 +51,8 @@ public class GameManager : MonoBehaviour
         price = PlayerPrefs.GetInt("Price", 1);
         buyPrice.text = price.ToString();
         startStackText.text = PlayerPrefs.GetInt("LevelValue", 0).ToString();
+        startLevelNum.text = PlayerPrefs.GetInt("Level").ToString();
+        gameLevelNum.text = startLevelNum.text;
 
     }
 
@@ -104,6 +106,7 @@ public class GameManager : MonoBehaviour
     public void GameWon()
     {
         onLevelWon?.Invoke();
+        endlevelText.text = PlayerPrefs.GetInt("Level").ToString();
         Player.Instance.AnimPlay(Player.PlayerStatus.Dance);
         Player.Instance.isStop = true;
         int collected;

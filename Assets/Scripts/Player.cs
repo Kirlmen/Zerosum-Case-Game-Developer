@@ -62,7 +62,10 @@ public class Player : MonoBehaviour
     void Update()
     {
         if (!GameManager.Instance.isStarted) { return; }
+        playerCanvas.SetActive(true);
         Movement();
+        GroundCheck();
+
     }
 
     private void FixedUpdate()
@@ -73,10 +76,7 @@ public class Player : MonoBehaviour
         }
 
 
-        if (!GameManager.Instance.isStarted) { return; }
-        playerCanvas.SetActive(true);
 
-        GroundCheck();
     }
 
 
@@ -192,6 +192,29 @@ public class Player : MonoBehaviour
         {
             item.SetActive(level == 4);
         }
+
+
+        if (level == 0)
+        {
+            levelFillImage.sprite = levelFill0;
+        }
+        else if (level == 1)
+        {
+            levelFillImage.sprite = levelFill1;
+        }
+        else if (level == 2)
+        {
+            levelFillImage.sprite = levelFill2;
+        }
+        else if (level == 3)
+        {
+            levelFillImage.sprite = levelFill3;
+        }
+        else if (level == 4)
+        {
+            levelFillImage.sprite = levelFill4;
+        }
+
     }
 
 

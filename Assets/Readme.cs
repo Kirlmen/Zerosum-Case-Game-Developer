@@ -23,7 +23,7 @@
  *      It includes ;
  *      -Game Title (You can choose your own)
  *      -Tap To Play Button and Text ++
- *      -Current Level Number
+ *      -Current Level Number ++
  *      -Currency Amount ++
  *      -Start Stack Upgrade Button & Price ++
  *
@@ -34,7 +34,7 @@
  *      This screen will appear while we are controlling the character.
  *
  *      It includes ;
- *      -Current Level Number
+ *      -Current Level Number ++
  *      -Currency Amount ++
  *      -Stack Amount ++
  *
@@ -87,7 +87,7 @@
  *      There must be minimum 2, maximum 5 different levels.
  *      Level number must increase if you reach finish. ++
  *      Level number must be remembered if game is closed and opened again. ++
- *      After your last unique level finished, you must repeat them.
+ *      After your last unique level finished, you must repeat them. ++
  *
  *  Currency :
  *      Currency Amount must be remembered if game is closed and opened again. ++

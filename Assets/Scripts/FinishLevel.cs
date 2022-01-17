@@ -20,6 +20,7 @@ public class FinishLevel : MonoBehaviour
             }
             else
             {
+                GameManager.Instance.isWon = true;
                 GameManager.Instance.GameWon();
             }
         }
