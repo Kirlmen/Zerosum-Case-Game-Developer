@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -40,6 +41,9 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
 
+        currentScene = SceneManager.GetActiveScene().buildIndex;
+        PlayerPrefs.SetInt("Level", currentScene);
+
         startedCurrency = PlayerPrefs.GetInt("Currency");
         currencyText.text = startedCurrency.ToString();
 
@@ -67,6 +71,11 @@ public class GameManager : MonoBehaviour
             buyPrice.color = Color.red;
         }
 
+        if (isWon) //total currency text update
+        {
+            totalCurrencyText.text = PlayerPrefs.GetInt("Currency").ToString();
+        }
+
     }
 
     public void TapToPlay()
@@ -91,6 +100,7 @@ public class GameManager : MonoBehaviour
     }
 
 
+    public bool isWon = false;
     public void GameWon()
     {
         onLevelWon?.Invoke();
@@ -99,9 +109,25 @@ public class GameManager : MonoBehaviour
         int collected;
         collected = int.Parse(ingameCurrencyText.text);
         collectedCurText.text = collected.ToString();
-        totalCurrencyText.text = PlayerPrefs.GetInt("Currency").ToString();
+
         //PlayerPrefs.SetInt("Currency", PlayerPrefs.GetInt("Currency") + runtimeCurrency);//saving the collected currency + saved currency
         //TODO: Next Scene button.
+
+    }
+
+    int currentScene;
+    int nextScene;
+    public void LoadNextLevel()
+    {
+        if (PlayerPrefs.GetInt("Level") < 5)
+        {
+            nextScene = PlayerPrefs.GetInt("Level") + 1;
+            SceneManager.LoadScene(nextScene);
+        }
+        else
+        {
+            SceneManager.LoadScene(1);
+        }
 
     }
 

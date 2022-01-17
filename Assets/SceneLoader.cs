@@ -7,54 +7,32 @@ public class SceneLoader : MonoBehaviour
 {
     public static SceneLoader Instance;
 
-    private void OnEnable()
-    {
-        Instance = this;
-        LoadLastScene();
-    }
-
     private void Awake()
     {
-        GetLastScene();
+        Instance = this;
     }
-
-    [SerializeField] private int currentScene;
-    [SerializeField] private int nextScene;
-    private void GetLastScene()
+    private void Start()
     {
-        currentScene = SceneManager.GetActiveScene().buildIndex;
-        nextScene = currentScene + 1;
-
-        if (!PlayerPrefs.HasKey("Level"))
-        {
-            PlayerPrefs.SetInt("Level", currentScene);
-        }
-
+        LoadScene();
     }
 
-    private void LoadLastScene()
+
+
+    private void LoadScene()
     {
         int lastScene = PlayerPrefs.GetInt("Level");
-        SceneManager.LoadScene(lastScene);
-    }
 
-    public void LoadNextLevel()
-    {
-        if (PlayerPrefs.HasKey("Level") && PlayerPrefs.GetInt("Level") < SceneManager.sceneCountInBuildSettings)
+        if (PlayerPrefs.HasKey("Level"))
         {
-            SceneManager.LoadScene(PlayerPrefs.GetInt("Level") + nextScene);
+            SceneManager.LoadScene(lastScene);
         }
         else
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
 
     }
 
-    private void OnDisable()
-    {
-        PlayerPrefs.SetInt("Level", currentScene);
-    }
 
 
 }

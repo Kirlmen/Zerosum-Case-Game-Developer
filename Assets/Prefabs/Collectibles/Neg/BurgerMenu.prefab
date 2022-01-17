@@ -61,6 +61,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   shouldRotate: 0
+  isCurrency: 0
   increaseValue: -10
   rotationSpeed: 0
 --- !u!65 &9105624758455484845
@@ -155,21 +156,3 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b58aeb97c20daa64fb20f6ff060c29ea, type: 3}
   m_PrefabInstance: {fileID: 9105624757902431631}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &9105624757921955288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8258692045289023710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 1
-  outlineColor: {r: 1, g: 0, b: 0, a: 1}
-  outlineWidth: 4.21
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []

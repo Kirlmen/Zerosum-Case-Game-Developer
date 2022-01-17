@@ -9580,8 +9580,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 419330433}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: LoadNextLevel
         m_Mode: 1
         m_Arguments:
@@ -10001,10 +10001,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 710611331}
     m_Modifications:
-    - target: {fileID: 783380615542337310, guid: c39d6b187d05950429f6213f039ccd5e, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 689dc1c6abb936340b2f3db529b3ca9f, type: 3}
     - target: {fileID: 3002459904235479662, guid: c39d6b187d05950429f6213f039ccd5e, type: 3}
       propertyPath: multiplyValue
       value: 5
@@ -10343,10 +10339,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 710611331}
     m_Modifications:
-    - target: {fileID: 783380615542337310, guid: c39d6b187d05950429f6213f039ccd5e, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: c8c3b1102fb60bf429d8382fa8014051, type: 3}
     - target: {fileID: 3002459904235479662, guid: c39d6b187d05950429f6213f039ccd5e, type: 3}
       propertyPath: multiplyValue
       value: 3
@@ -16021,10 +16013,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 710611331}
     m_Modifications:
-    - target: {fileID: 783380615542337310, guid: c39d6b187d05950429f6213f039ccd5e, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 3c039be4a88fc3f428dd28f9e7bc3bbf, type: 3}
     - target: {fileID: 3002459904235479662, guid: c39d6b187d05950429f6213f039ccd5e, type: 3}
       propertyPath: multiplyValue
       value: 4
