@@ -171,7 +171,6 @@ public class Player : MonoBehaviour
             }
         }
 
-
         foreach (var item in level0)
         {
             item.SetActive(level == 0);
@@ -214,6 +213,7 @@ public class Player : MonoBehaviour
         {
             levelFillImage.sprite = levelFill4;
         }
+
 
     }
 
