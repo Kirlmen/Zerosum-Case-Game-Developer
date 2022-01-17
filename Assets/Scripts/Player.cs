@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
     [Space]
 
     private Rigidbody rb;
-    public bool stop = false;
+    public bool isStop = false;
 
     private void Awake()
     {
@@ -88,9 +88,9 @@ public class Player : MonoBehaviour
 
     private void Movement()
     {
-        if (stop) { return; }
-        if (!GameManager.Instance.isStarted) { return; }
 
+        if (!GameManager.Instance.isStarted) { return; }
+        if (isStop) { return; }
 
         float newX = 0;
         float touchXDelta = 0;

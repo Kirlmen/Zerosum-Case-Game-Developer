@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
 
 
 
-    public int currency;
+    [SerializeField] int startedCurrency;
     public bool isStarted = false;
 
     private void OnEnable()
@@ -40,8 +40,8 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
 
-        currency = PlayerPrefs.GetInt("Currency");
-        currencyText.text = currency.ToString();
+        startedCurrency = PlayerPrefs.GetInt("Currency");
+        currencyText.text = startedCurrency.ToString();
 
 
         price = PlayerPrefs.GetInt("Price", 1);
@@ -58,7 +58,14 @@ public class GameManager : MonoBehaviour
         else { openButton.SetActive(true); }
 
         if (canBuy && PlayerPrefs.GetInt("Currency") >= PlayerPrefs.GetInt("Price")) { buyButton.interactable = true; } //Buy button protection
-        else { buyButton.interactable = false; buyPrice.color = Color.red; }
+        else { buyButton.interactable = false; }
+
+
+        //price color
+        if (PlayerPrefs.GetInt("Currency") < PlayerPrefs.GetInt("Price"))
+        {
+            buyPrice.color = Color.red;
+        }
 
     }
 
@@ -73,7 +80,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public int runtimeCurrency;
+    [SerializeField] int runtimeCurrency;
     public void RuntimeIncrease(int amount) //calculate the runtime currency
     {
         if (isStarted)
@@ -88,7 +95,7 @@ public class GameManager : MonoBehaviour
     {
         onLevelWon?.Invoke();
         Player.Instance.AnimPlay(Player.PlayerStatus.Dance);
-        Player.Instance.stop = true;
+        Player.Instance.isStop = true;
         int collected;
         collected = int.Parse(ingameCurrencyText.text);
         collectedCurText.text = collected.ToString();
@@ -97,8 +104,6 @@ public class GameManager : MonoBehaviour
         //TODO: Next Scene button.
 
     }
-
-
 
 
     [SerializeField] GameObject screenBuyButton;

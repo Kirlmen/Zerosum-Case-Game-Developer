@@ -18,11 +18,11 @@ public class Collectible : MonoBehaviour
 
         if (increaseValue <= -20)
         {
-            Player.Instance.stop = true;
+            Player.Instance.isStop = true;
         }
         else
         {
-            Player.Instance.stop = false;
+            Player.Instance.isStop = false;
         }
         Player.Instance.levelValue += increaseValue;
         Player.Instance.levelSlider.value = Player.Instance.levelValue;
