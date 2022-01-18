@@ -14,7 +14,7 @@ public class FinishLevel : MonoBehaviour
         if (other.GetComponent<Player>())
         {
 
-            if (Player.Instance.levelValue >= requiredLevel)
+            if (Player.Instance.levelSlider.value >= requiredLevel)
             {
                 triggerEnter?.Invoke();
             }

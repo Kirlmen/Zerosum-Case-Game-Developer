@@ -12,13 +12,17 @@ public class OpenButton : MonoBehaviour
         butonAnimator = GetComponent<Animator>();
         if (PlayerPrefs.GetInt("Currency") < PlayerPrefs.GetInt("Price"))
         {
-            butonAnimator.SetFloat("Stop", 0);
+            butonAnimator.SetFloat("SpeedParameter", 0);
         }
     }
-    public void AnimateButton()
+    public void OpenAnim()
     {
-        GameManager.Instance.canBuy = true;
-        butonAnimator.SetTrigger("Open");
+        butonAnimator.SetBool("Open", true);
+    }
+
+    public void CloseAnim()
+    {
+        butonAnimator.SetBool("Open", false);
     }
 
 
