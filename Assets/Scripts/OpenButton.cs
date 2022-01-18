@@ -18,11 +18,13 @@ public class OpenButton : MonoBehaviour
     public void OpenAnim()
     {
         butonAnimator.SetBool("Open", true);
+        GameManager.Instance.canBuy = true;
     }
 
     public void CloseAnim()
     {
         butonAnimator.SetBool("Open", false);
+        GameManager.Instance.canBuy = false;
     }
 
 

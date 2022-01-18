@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     private Touch touch;
 
     [SerializeField] ParticleSystem swirlParticle;
-    [SerializeField] GameObject playerCanvas;
+    [SerializeField] GameObject playerCanvas, wonEffects;
 
 
 
@@ -61,10 +61,6 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (!GameManager.Instance.isStarted) { return; }
-        playerCanvas.SetActive(true);
-        Movement();
-        GroundCheck();
 
     }
 
@@ -75,7 +71,16 @@ public class Player : MonoBehaviour
             levelValue = PlayerPrefs.GetInt("LevelValue");
         }
 
+        if (GameManager.Instance.isWon)
+        {
+            wonEffects.SetActive(true);
+        }
 
+
+        if (!GameManager.Instance.isStarted) { return; }
+        playerCanvas.SetActive(true);
+        Movement();
+        GroundCheck();
 
     }
 
@@ -86,6 +91,7 @@ public class Player : MonoBehaviour
     public float maxRunSpeed;
     private float currentRunSpeed;
     float lastTouchedX;
+    float yRotation;
 
 
     //if x speed < 110 camera starts to jitter
@@ -106,7 +112,8 @@ public class Player : MonoBehaviour
             }
             else if (Input.GetTouch(0).phase == TouchPhase.Moved)
             {
-                touchXDelta = 5 * (Input.GetTouch(0).position.x - lastTouchedX) / Screen.width; //fixed movement
+
+                touchXDelta = 5 * (Input.GetTouch(0).position.x - lastTouchedX) / Screen.width;
                 lastTouchedX = Input.GetTouch(0).position.x;
             }
         }
@@ -121,7 +128,6 @@ public class Player : MonoBehaviour
 
         newX = transform.position.x + xAxisSpeed * touchXDelta * Time.deltaTime;
         newX = Mathf.Clamp(newX, -limitX, limitX);
-
 
         Vector3 newPosition = new Vector3(newX, transform.position.y, transform.position.z + currentRunSpeed * Time.deltaTime);
         transform.position = newPosition;
@@ -244,7 +250,7 @@ public class Player : MonoBehaviour
                 foreach (var item in playerAnimators)
                 {
                     item.SetInteger(Status, 1);
-                    item.Update(0); // force to quick transition to run. (on stage change, there is a delay to entry>1sec play idle> run);
+                    // item.Update(0); buggy
                 }
                 break;
             case PlayerStatus.Sad:

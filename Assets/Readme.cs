@@ -13,9 +13,9 @@
  * -----
  *
  * There will be 3 screens :
- * - Tap To Play ??
- * - In Game ??
- * - Level End ??
+ * - Tap To Play ++
+ * - In Game ++
+ * - Level End ++
  *
  *  Tap To Play :
  *      This screen will appear before starting a new level.
@@ -27,7 +27,7 @@
  *      -Currency Amount ++
  *      -Start Stack Upgrade Button & Price ++
  *
- *      Start Stack Upgrade Button :
+ *      Start Stack Upgrade Button : ++
  *      This button will consume our currency and increase our starting stack.
  *
  *  In Game :
@@ -38,7 +38,7 @@
  *      -Currency Amount ++
  *      -Stack Amount ++
  *
- *      Stack Amount :
+ *      Stack Amount : ++
  *      This must be attached to and move with the character as smooth as possible.
  *
  *  Level End :

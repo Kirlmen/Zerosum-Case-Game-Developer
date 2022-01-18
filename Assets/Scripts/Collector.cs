@@ -23,7 +23,7 @@ public class Collector : MonoBehaviour
         }
         if (other.CompareTag("Gold"))
         {
-            coinParticle.Play(true);
+            coinParticle.Play();
         }
     }
 }
