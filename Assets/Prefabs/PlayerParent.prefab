@@ -5188,7 +5188,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2125691991816425415}
-  m_LocalRotation: {x: 0.2522077, y: -0.000000008325075, z: 0.0000000021697906, w: 0.9676731}
+  m_LocalRotation: {x: 0.2522077, y: -0.000000008325077, z: 0.000000002169791, w: 0.9676731}
   m_LocalPosition: {x: 0, y: 7.22, z: -9.42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -5452,7 +5452,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5713,9 +5713,9 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   isStop: 0
-  xAxisSpeed: 60
+  xAxisSpeed: 50
   limitX: 4
-  maxRunSpeed: 7
+  maxRunSpeed: 8
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -6289,7 +6289,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2125691992754567052
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6384,7 +6384,7 @@ GameObject:
   - component: {fileID: 2125691992788673016}
   - component: {fileID: 2125691992788673017}
   m_Layer: 0
-  m_Name: CoinBlastGold (1)
+  m_Name: CoinTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6398,7 +6398,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2125691992788673023}
   m_LocalRotation: {x: -0.00000055822056, y: 0.95327336, z: 0.30210927, w: 0.0000017614049}
-  m_LocalPosition: {x: -0, y: 0.853, z: -0.06}
+  m_LocalPosition: {x: -0, y: 1.317, z: -0.06}
   m_LocalScale: {x: 2.1288297, y: 2.1288297, z: 2.1288297}
   m_Children:
   - {fileID: 2125691991802636489}
@@ -6413,7 +6413,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2125691992788673023}
   serializedVersion: 7
-  lengthInSec: 0.1
+  lengthInSec: 0.5
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 3
@@ -6487,8 +6487,8 @@ ParticleSystem:
     enabled: 1
     startLifetime:
       serializedVersion: 2
-      minMaxState: 3
-      scalar: 1
+      minMaxState: 0
+      scalar: 0.2
       minScalar: 0.6
       maxCurve:
         serializedVersion: 2
@@ -12124,11 +12124,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 436656, guid: 1ed56f4c486ff6141a344e5e5714e1b9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.071
+      value: 0.23
       objectReference: {fileID: 0}
     - target: {fileID: 436656, guid: 1ed56f4c486ff6141a344e5e5714e1b9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.3600001
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 436656, guid: 1ed56f4c486ff6141a344e5e5714e1b9, type: 3}
       propertyPath: m_LocalRotation.w
