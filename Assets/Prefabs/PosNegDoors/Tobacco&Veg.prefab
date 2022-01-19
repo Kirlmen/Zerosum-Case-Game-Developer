@@ -400,7 +400,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 162254154727986704}
+      - m_Target: {fileID: 5603389109008286554}
         m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
         m_MethodName: Play
         m_Mode: 1
@@ -412,7 +412,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 5721957634055758597}
+      - m_Target: {fileID: 8901928739841518091}
         m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
         m_MethodName: Play
         m_Mode: 1
@@ -424,7 +424,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4509004146767626200}
+      - m_Target: {fileID: 5647250023975766652}
         m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
         m_MethodName: Play
         m_Mode: 1
@@ -448,7 +448,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8517226277359764724}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -460,7 +460,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7454714779744053371}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -593,11 +593,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61dc990e110011c498da21c564a3d12a, type: 3}
---- !u!198 &162254154727986704 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 198943302776967112, guid: 61dc990e110011c498da21c564a3d12a, type: 3}
-  m_PrefabInstance: {fileID: 36794789329525208}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &39756171881804324 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4370204070423548, guid: 61dc990e110011c498da21c564a3d12a, type: 3}
@@ -938,11 +933,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4972370157488692, guid: 97d281449bae4a84e8e05b8f06f05c6c, type: 3}
   m_PrefabInstance: {fileID: 4346995938952529010}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &4509004146767626200 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 198319633177787306, guid: 97d281449bae4a84e8e05b8f06f05c6c, type: 3}
-  m_PrefabInstance: {fileID: 4346995938952529010}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5521211119291800306
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1114,11 +1104,6 @@ PrefabInstance:
 --- !u!4 &5595703718835925021 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4500654311645770, guid: 9b69a83a2d393a84f8a860f9966c861a, type: 3}
-  m_PrefabInstance: {fileID: 5595744186596627031}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &5721957634055758597 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 198274478008365394, guid: 9b69a83a2d393a84f8a860f9966c861a, type: 3}
   m_PrefabInstance: {fileID: 5595744186596627031}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5693178757955489668
