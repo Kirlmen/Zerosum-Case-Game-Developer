@@ -202,7 +202,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8813913152875628576, guid: aec66dac55fc7774abbb54f3e680cdaa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.26
+      value: 1.91
       objectReference: {fileID: 0}
     - target: {fileID: 8813913152875628576, guid: aec66dac55fc7774abbb54f3e680cdaa, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2462,7 +2462,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1796676892}
-  m_LocalRotation: {x: 0.2522077, y: 0.000000008325075, z: -0.0000000021697906, w: 0.9676731}
+  m_LocalRotation: {x: 0.2522077, y: -0.000000008325077, z: 0.000000002169791, w: 0.9676731}
   m_LocalPosition: {x: 0, y: 7.593, z: -6.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2669,6 +2669,58 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2125691991816425408, guid: cecf8adfa81119b499391b3c2add9b2b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.000000008325077
+      objectReference: {fileID: 0}
+    - target: {fileID: 2125691991816425408, guid: cecf8adfa81119b499391b3c2add9b2b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.000000002169791
+      objectReference: {fileID: 0}
+    - target: {fileID: 2125691992231549121, guid: cecf8adfa81119b499391b3c2add9b2b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2125691992231549121, guid: cecf8adfa81119b499391b3c2add9b2b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2125691992431779308, guid: cecf8adfa81119b499391b3c2add9b2b, type: 3}
+      propertyPath: xAxisSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2125691992788673016, guid: cecf8adfa81119b499391b3c2add9b2b, type: 3}
+      propertyPath: stopAction
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2125691992788673016, guid: cecf8adfa81119b499391b3c2add9b2b, type: 3}
+      propertyPath: cullingMode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2125691992788673016, guid: cecf8adfa81119b499391b3c2add9b2b, type: 3}
+      propertyPath: lengthInSec
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2125691992788673016, guid: cecf8adfa81119b499391b3c2add9b2b, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2125691992788673016, guid: cecf8adfa81119b499391b3c2add9b2b, type: 3}
+      propertyPath: InitialModule.startLifetime.minMaxState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2125691992788673017, guid: cecf8adfa81119b499391b3c2add9b2b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2125691992788673022, guid: cecf8adfa81119b499391b3c2add9b2b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.317
+      objectReference: {fileID: 0}
+    - target: {fileID: 2125691992788673023, guid: cecf8adfa81119b499391b3c2add9b2b, type: 3}
+      propertyPath: m_Name
+      value: CoinTrail
+      objectReference: {fileID: 0}
     - target: {fileID: 2125691993110230950, guid: cecf8adfa81119b499391b3c2add9b2b, type: 3}
       propertyPath: m_RootOrder
       value: 4

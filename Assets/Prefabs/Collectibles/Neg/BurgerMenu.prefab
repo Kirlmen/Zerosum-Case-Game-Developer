@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9105624758455484847}
-  m_LocalRotation: {x: -0.18393397, y: 0.66494757, z: 0.17406505, w: 0.70264816}
+  m_LocalRotation: {x: -0.1839361, y: 0.6649479, z: 0.17406745, w: 0.70264673}
   m_LocalPosition: {x: 2.25, y: 0.658, z: 15.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -80,14 +80,14 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: -10
+          m_IntArgument: -5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
   shouldRotate: 0
   isCurrency: 0
-  increaseValue: -10
+  increaseValue: -5
   rotationSpeed: 0
 --- !u!65 &9105624758455484845
 BoxCollider:

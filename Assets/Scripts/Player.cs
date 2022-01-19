@@ -61,11 +61,19 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (!GameManager.Instance.isStarted) { AnimPlay(PlayerStatus.Idle); isLevelUp = false; return; }
+        if (isLevelUp)
+        {
+            AnimPlay(PlayerStatus.Cheer);
+            isLevelUp = false;
+        }
+
 
     }
 
     private void FixedUpdate()
     {
+
         if (PlayerPrefs.GetInt("LevelValue") > levelValue) //update levelvalue runtime
         {
             levelValue = PlayerPrefs.GetInt("LevelValue");
@@ -73,9 +81,9 @@ public class Player : MonoBehaviour
 
         if (GameManager.Instance.isWon)
         {
+            playerCanvas.SetActive(false);
             wonEffects.SetActive(true);
         }
-
 
         if (!GameManager.Instance.isStarted) { return; }
         playerCanvas.SetActive(true);
@@ -97,6 +105,7 @@ public class Player : MonoBehaviour
     //if x speed < 110 camera starts to jitter
     private void Movement()
     {
+
 
         if (!GameManager.Instance.isStarted) { return; }
         if (isStop) { return; }
@@ -136,6 +145,7 @@ public class Player : MonoBehaviour
 
     private int level;
     private int prevLevel;
+    private bool isLevelUp = false;
     public void StageManager() //stages
     {
         if (levelValue < 0) { levelValue = 0; }
@@ -168,11 +178,13 @@ public class Player : MonoBehaviour
             if (prevLevel < level) //levelup
             {
                 onLevelUp?.Invoke();
+                LevelUpAnim();
                 prevLevel = level;
             }
             else if (prevLevel > level) //leveldown
             {
                 onLevelDown?.Invoke();
+
                 prevLevel = level;
             }
         }
@@ -299,7 +311,7 @@ public class Player : MonoBehaviour
         if (!isGrounded)
         {
             swirlParticle.Play();
-            rb.drag = 3f;
+            //rb.drag = 2f;
             AnimPlay(PlayerStatus.Falling);
         }
         else if (isGrounded)
@@ -315,4 +327,8 @@ public class Player : MonoBehaviour
     }
 
 
+    public void LevelUpAnim()
+    {
+        isLevelUp = true;
+    }
 }
