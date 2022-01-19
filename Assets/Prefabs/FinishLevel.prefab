@@ -135,7 +135,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d6f13c8fe73e4074d995d621abd08622, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 58.60875
+      value: 64.10875
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d6f13c8fe73e4074d995d621abd08622, type: 3}
       propertyPath: m_LocalRotation.w
@@ -183,18 +183,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5033445749773401984}
     m_Modifications:
-    - target: {fileID: 2286958584425136336, guid: 47a8b2693ab62c4429a96c898e9215dc, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2286958584425389496, guid: 47a8b2693ab62c4429a96c898e9215dc, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.000028476115
-      objectReference: {fileID: 0}
-    - target: {fileID: 2286958584425389496, guid: 47a8b2693ab62c4429a96c898e9215dc, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 17.75
-      objectReference: {fileID: 0}
     - target: {fileID: 3553504620583716532, guid: 47a8b2693ab62c4429a96c898e9215dc, type: 3}
       propertyPath: m_Name
       value: Doors
@@ -241,34 +229,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3553504620583716533, guid: 47a8b2693ab62c4429a96c898e9215dc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6655365024963667055, guid: 47a8b2693ab62c4429a96c898e9215dc, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7056509842717061182, guid: 47a8b2693ab62c4429a96c898e9215dc, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.000028476115
-      objectReference: {fileID: 0}
-    - target: {fileID: 7056509842717061182, guid: 47a8b2693ab62c4429a96c898e9215dc, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 17.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 7056509842717338966, guid: 47a8b2693ab62c4429a96c898e9215dc, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8500115877204621355, guid: 47a8b2693ab62c4429a96c898e9215dc, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8500115877343479509, guid: 47a8b2693ab62c4429a96c898e9215dc, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8500115877640480985, guid: 47a8b2693ab62c4429a96c898e9215dc, type: 3}
-      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

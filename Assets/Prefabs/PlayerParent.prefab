@@ -5713,7 +5713,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   isStop: 0
-  xAxisSpeed: 50
+  xAxisSpeed: 60
   limitX: 4
   maxRunSpeed: 8
   groundLayerMask:

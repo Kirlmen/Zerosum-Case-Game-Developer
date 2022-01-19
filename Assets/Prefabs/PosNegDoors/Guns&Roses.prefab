@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 5239691564071072864}
   - component: {fileID: 5921480589451326733}
   m_Layer: 0
-  m_Name: GreenDoor
+  m_Name: RedDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -165,7 +165,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 5603389109008286554}
+      - m_Target: {fileID: 4509004146767626200}
         m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
         m_MethodName: Play
         m_Mode: 1
@@ -177,7 +177,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8901928739841518091}
+      - m_Target: {fileID: 162254154727986704}
         m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
         m_MethodName: Play
         m_Mode: 1
@@ -189,7 +189,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 5647250023975766652}
+      - m_Target: {fileID: 162254154727986704}
         m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
         m_MethodName: Play
         m_Mode: 1
@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 8681764747535835978}
   - component: {fileID: 2908036809298498052}
   m_Layer: 0
-  m_Name: RedDoor
+  m_Name: GreenDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -412,42 +412,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 162254154727986704}
-        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 5721957634055758597}
-        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4509004146767626200}
-        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 3556691318079319438}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -512,6 +476,42 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8901928739841518091}
+        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5603389109008286554}
+        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5647250023975766652}
+        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1135,11 +1135,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4500654311645770, guid: 9b69a83a2d393a84f8a860f9966c861a, type: 3}
   m_PrefabInstance: {fileID: 5595744186596627031}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &5721957634055758597 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 198274478008365394, guid: 9b69a83a2d393a84f8a860f9966c861a, type: 3}
-  m_PrefabInstance: {fileID: 5595744186596627031}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5693178757955489668
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1320,14 +1315,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a14c65ec99f1131478340152cbfd7959, type: 3}
---- !u!4 &8744228430691526161 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4831555974705038, guid: a14c65ec99f1131478340152cbfd7959, type: 3}
-  m_PrefabInstance: {fileID: 8739401290262038943}
-  m_PrefabAsset: {fileID: 0}
 --- !u!198 &8901928739841518091 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 198886457026339732, guid: a14c65ec99f1131478340152cbfd7959, type: 3}
+  m_PrefabInstance: {fileID: 8739401290262038943}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8744228430691526161 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4831555974705038, guid: a14c65ec99f1131478340152cbfd7959, type: 3}
   m_PrefabInstance: {fileID: 8739401290262038943}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8778462834976224247

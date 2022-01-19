@@ -21,7 +21,7 @@
  *      This screen will appear before starting a new level.
  * 
  *      It includes ;
- *      -Game Title (You can choose your own)
+ *      -Game Title (You can choose your own) ++
  *      -Tap To Play Button and Text ++
  *      -Current Level Number ++
  *      -Currency Amount ++
@@ -84,7 +84,7 @@
  * -----
  * 
  *  Levels :
- *      There must be minimum 2, maximum 5 different levels.
+ *      There must be minimum 2, maximum 5 different levels. ++
  *      Level number must increase if you reach finish. ++
  *      Level number must be remembered if game is closed and opened again. ++
  *      After your last unique level finished, you must repeat them. ++
